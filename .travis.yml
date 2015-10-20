@@ -14,17 +14,8 @@ matrix:
         - google-chrome
         packages:
         - google-chrome-stable
-  - node_js: node
-    script:
-    - |
-      if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
-        wct --simpleOutput -s 'Windows 10/microsoftedge' -s 'Windows 8.1/internet explorer@11' -s 'Windows 7/internet explorer@10' -s 'OS X 10.10/safari@8' -s 'OS X 10.9/safari@7'
-      fi
 before_script:
 - npm install bower
 - npm install web-component-tester
 - export PATH=$PWD/node_modules/.bin:$PATH
 - bower install
-env:
-  secure: "uFZX4UWiiQJrLUbIt1MsK+TdVP7CNHzq1RMqGaN2SzkwDE7e3Psl8Mcdf5mo9EyU3TvQv+it6I8e9iG03Rv1MmmJa5vS9shqKEkA9EFPxcUKPKyJQvllMtdHFSITkzUqwVFZ13auhd6q7HaER2kKFICC0AjEif946OoWyKrpjKBF2Eu5TSXMECCC7M3K04HMKMIOLNVk0c3Fc8BSAxT4rLP3NztUdYoRSab4UuGFzBlcxGdVkD+WGMQ7TjVPukktLOcD4qJS0FMnvLNRh4d2+kXe4mcYk3KFHVFf6pQotTmGYhgYwMV0LBY8CQcJTFne0b0v1HDDYsvoYc+uIbEEw23kaChMyPmc2Vk/24o7Gv82BH1mQe4g43nOgCtV+0UNvHMaiw2zc8UC2EHCI6LNKY9DSHwPI8NDHgHYaBlEyyMTra7e+RTWIRRDla9PTYgId14Zp8fGygceBN6x09+BMfYhtjMuSJfO1Vl8s48SHP6aIFdHwrU+yMM8zD29SWO6lbyr0lFEDWhpQsFnOV44Yyp5igMuheqm9nHgAQ48oM4xEMePSRuHRIskxn6+7X9GcBCiCqtMgOylY2h5uBnu8kwDQzh2ShDYCjJ3KolGd6LC7z4TqyNSooGHg4WVObjiAHWBRakgBIUlhBglWaLr68mc3c7kKf9h5MVv9pIaHPg="
-  secure: "hCWwS9phwFnBx991dMWOGMVSTyyWyGYBhOZod4IIoO8LTnAGWJcV2RNdid/RXVcXPWwfkm1NUnVnQqRg7HfVUgFQGqhL0FdtF20IopeYSTXQD36e+Dk9cTke6fzo7u22IFCel8XelVE4Vh60jzy+I90y7oIgMLtKvPY2obEBOLJ9RUDnKpGmsTBnz9RQlbrVf9ranV5povmej6M0BG0GFrvf8N9w9rq6v1CHmZ3pqAlQSVQF9+IfABQkjaQzlpv+qobZK48i4eoo4W7g3Zxx+dpviiFs6IhmvYZN3LiEmgE6vyZMobYs65Zt5yrThdzpUfjLkY4hUE2gE+lXxIOtt7gYOhrS723xK56wqpLY2Z8bG8wmH7ItGCoVVjAn/Tm7iPM8vIc0cb2pRU6s+VMbqgpwDm2891SH1O4n7N7nHEhplJp5aRUXbhcchegO/U6isXVoTdhcie+yTE+bsOjey1IXrAtAWh3RBj+dDv+Uf796R+6+DN0/RWBCPLCJ1AfvpP0rQrHZiTY5BlAGckQBEgArKfDXC325PvuPnO9FMO4p99onDrUz7plSgUp//tYiFOtGgXuTozFXQCl98g9Br8SatDkIVEWEyBYDQIvkTvE/V6QrtRpsgPFcjVD55VlWMm4tS2a27QcSTPqGW3StWxFXWip44xY89IDdMtfCy+Q="

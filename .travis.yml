@@ -3,17 +3,7 @@ sudo: false
 cache:
   directories:
   - node_modules
-matrix:
-  include:
-  - node_js: stable
-    script: xvfb-run -a wct --simpleOutput -l firefox -l chrome
-    addons:
-      firefox: latest
-      apt:
-        sources:
-        - google-chrome
-        packages:
-        - google-chrome-stable
+script: xvfb-run -a wct --simpleOutput -l firefox -l chrome
 before_script:
 - npm install bower
 - npm install web-component-tester

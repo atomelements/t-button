@@ -11,11 +11,6 @@
             "ico": {
                 "name": "Icon",
                 "type": "iconset"
-            },
-            "test": {
-                "name": "Value",
-                "type": "api",
-                "parameter": "label"
             }
         }
     }, {

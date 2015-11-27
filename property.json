@@ -16,11 +16,6 @@
     }, {
         "name": "Properties",
         "fields": {
-            "required": {
-                "name": "Mandatory Field",
-                "type": "Boolean",
-                "value": true
-            },
             "onlyIcon": {
                 "name": "Icon Only",
                 "type": "Boolean",

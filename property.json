@@ -10,7 +10,8 @@
             },
             "ico": {
                 "name": "Icon",
-                "type": "iconset"
+                "type": "iconset",
+                "value": ""
             }
         }
     }, {

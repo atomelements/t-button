@@ -8,6 +8,7 @@
   min-width:var(--button-min-width);
   color: var(--button-text-color);
   font-size: var(--button-text-size);
+  text-align: center;
 }
 paper-button{
   display: block;
@@ -65,7 +66,7 @@ paper-button{
   paper-icon-button{
       color: inherit;
   }
-:host ::content .keyboard-focus.paper-button{
+:host ::content paper-button[raised].keyboard-focus {
   font-weight: normal;
 }
   :host([ico]) ::content iron-icon{

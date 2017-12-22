@@ -9,87 +9,88 @@
 
   <template>
 
-    <style>
+    <style is="custom-style">
       
 :host{
+  @apply --layout-inline;
+  @apply --layout-center-center;
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
   font-family: var(--primary-font-family);
   outline: none;
   background: var(--button-bg-color);
   border-radius: var(--standard-border-radius);
-  display: inline-block;
   min-width:var(--button-min-width);
   color: var(--button-text-color);
   font-size: var(--button-text-size);
-  text-align: center;
-}
-paper-button{
-  display: block;
-  margin: 0 ;
-  outline: none;
-  border-radius: var(--standard-border-radius, 2px);
 
-  @apply(--t-button);
+  --paper-button-ink-color: red;
+  --paper-button: {
+    border-radius: var(--standard-border-radius, 2px);
+    background:var(--button-primary-bg-color);
+    color:var(--button-primary-text-color);
+    @apply --layout-horizontal;
+    @apply --layout-center;
+    @apply --layout-center-justified;
+  };
+
+  --paper-button-disabled: ;
+  --paper-button-flat-keyboard-focus: ;
+  --paper-button-raised-keyboard-focus: ;
+
+  --iron-icon: ;  
+  --iron-icon-width: var(--button-icon-size, 24px);
+  --iron-icon-height: var(--button-icon-size, 24px);
+  --iron-icon-fill-color: red;
+  --iron-icon-stroke-color: blue ;
+
+  --paper-icon-button-disabled-text: ;
+  --paper-icon-button-ink-color: var(--primary-text-color);
+  --paper-icon-button: {
+     background:var(--button-primary-bg-color);
+     border-radius: var(--standard-border-radius, 2px);
+  };
+  --paper-icon-button-disabled: ;
+  --paper-icon-button-hover: ;
+
 }
+
+
 :host([only-icon]){
   background:var(--icon-bg-color);
   min-width: 0!important;
   margin: 0;
-  @apply(--paper-icon-button);
+  @apply --paper-icon-button;
   color: var(--icon-color);
 }
 :host([only-icon]) paper-icon-button{
-  background:var(--icon-bg-color);
+  background: var(--icon-bg-color);
   border-radius: 50%!important;
   overflow: hidden;
 }
 
-
- :host.primary paper-button, 
- :host.primary paper-icon-button{
-  background:var(--button-primary-bg-color);
-  color:var(--button-primary-text-color);
- }
-
-  :host([disabled]) paper-button{
-    background: var(--button-disabled-bg-color);
-    color: var(--button-disabled-text-color);
-    cursor: auto;
-    pointer-events: none;
-
-    @apply(--paper-button-disabled);
-  }
-  :host ::content paper-material{
-    @apply(--layout-horizontal);
-    @apply(--layout-center);
-    @apply(--layout-center-justified);
-  }
-  :host([ico][icon-left]) ::content paper-material #text-button{
+  :host([ico][icon-left]) #text-button{
     order:2;
     margin-left:8px;
     margin-right:0;
   }
 
-  :host([ico]) ::content paper-material #text-button{
+  :host([ico]) #text-button{
     margin-right:8px;
     margin-left:0;
   }
 
-  :host([ico]) ::content paper-material #text-icon, 
-  paper-icon-button{
-      color: inherit;
-  }
-:host ::content paper-button[raised].keyboard-focus {
-  font-weight: normal;
-}
-  :host([ico]) ::content iron-icon{
-    height: var(--button-icon-size);
-    width: var(--button-icon-size);
+  :host([ico]) #text-icon {
+    display: inline-block;
+      width: var(--iron-icon-width);
+      height: var(--iron-icon-height);
   }
 
-  /* Remove bold from focus */
-  paper-button:not([raised]).keyboard-focus {
-    font-weight: normal;
-}
     </style>
 
     <template is="dom-if" if="[[!onlyIcon]]" restamp>
